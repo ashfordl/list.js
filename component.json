@@ -1,7 +1,7 @@
 {
   "name": "list.js",
-  "repo": "javve/list.js",
-  "version": "1.1.1",
+  "repo": "ashfordl/list.js",
+  "version": "1.1.2",
   "description": "Add search, sort and flexibility to plain HTML lists or tables with cross-browser native JavaScript.",
   "keywords": [
     "list",
@@ -38,6 +38,5 @@
     "mochajs/mocha": "*",
     "components/jquery": "1.11.2"
   },
-  "twitter": "javve",
   "remotes": []
 }
