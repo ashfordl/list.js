@@ -54,6 +54,36 @@ describe('Sort', function() {
       expect(list.items[4].values().val).to.be.equal("b");
       expect(list.items[5].values().val).to.be.equal("a");
     });
+    it('should sort letters and numbers asc', function() {
+      i1.values({ val: "b" });
+      i2.values({ val: "a" });
+      i3.values({ val: "0" });
+      i4.values({ val: "c" });
+      i5.values({ val: "9" });
+      i6.values({ val: "3" });
+      list.sort('val');
+      expect(list.items[0].values().val).to.be.equal("0");
+      expect(list.items[1].values().val).to.be.equal("3");
+      expect(list.items[2].values().val).to.be.equal("9");
+      expect(list.items[3].values().val).to.be.equal("a");
+      expect(list.items[4].values().val).to.be.equal("b");
+      expect(list.items[5].values().val).to.be.equal("c");
+    });
+    it('should sort letters and numbers desc', function() {
+      i1.values({ val: "b" });
+      i2.values({ val: "a" });
+      i3.values({ val: "0" });
+      i4.values({ val: "c" });
+      i5.values({ val: "9" });
+      i6.values({ val: "3" });
+      list.sort('val', { order: "desc" });
+      expect(list.items[0].values().val).to.be.equal("c");
+      expect(list.items[1].values().val).to.be.equal("b");
+      expect(list.items[2].values().val).to.be.equal("a");
+      expect(list.items[3].values().val).to.be.equal("9");
+      expect(list.items[4].values().val).to.be.equal("3");
+      expect(list.items[5].values().val).to.be.equal("0");
+    });
     it('should fail to sort åäö desc (becomes äåö)', function() {
       i1.values({ val: "a" });
       i2.values({ val: "å" });

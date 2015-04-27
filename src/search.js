@@ -58,7 +58,9 @@ module.exports = function(list) {
     },
     values: function(values, column) {
       if (values.hasOwnProperty(column)) {
-        text = toString(values[column]).toLowerCase();
+        // text = toString(values[column]).toLowerCase();
+        // Remove HTML tags from search text
+        text = toString(values[column]).toLowerCase().replace(/<[^>]*>/g, "");
         if ((searchString !== "") && (text.search(searchString) > -1)) {
           return true;
         }
